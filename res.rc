@@ -1,0 +1,925 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINMENU MENU 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "New...",                      ID_NEW
+        MENUITEM "Open...",                     ID_OPEN
+        MENUITEM "Save",                        ID_SAVE_MAP
+        MENUITEM SEPARATOR
+        MENUITEM "Run Level",                   ID_FILE_RUNLEVEL
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",                        ID_EXIT
+    END
+    POPUP "Edit"
+    BEGIN
+        MENUITEM "Copy",                        ID_COPY, GRAYED
+        MENUITEM "Cut",                         ID_CUT, GRAYED
+        MENUITEM "Paste",                       ID_PASTE, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Redo",                        ID_REDO, GRAYED
+        MENUITEM "Undo",                        ID_UNDO, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Select All",                  ID_SELECT_ALL, GRAYED
+    END
+    POPUP "Textures"
+    BEGIN
+        MENUITEM "Load Set...",                 ID_TEXTURES_LOADSET
+        MENUITEM "Align All Textures",          ID_TEXTURES_ALIGNALLTEXTURES
+    END
+    POPUP "Vertex"
+    BEGIN
+        MENUITEM "Add Vertex",                  ID_ADD_VERTEX, GRAYED
+        MENUITEM "Delete Vertex",               ID_DELETE_VERTEX, GRAYED
+        MENUITEM "Vertex Properties",           ID_VERTEX_PROPERTIES, GRAYED
+        MENUITEM "Select Next",                 ID_VERTEX_SELECTNEXT
+        MENUITEM "Compute Vertex Connections",  ID_VERTEX_COMPUTEVERTEXCONNECTIONS
+
+        MENUITEM "Snap Verts to Grid",          ID_VERTEX_SNAPVERTSTOGRID
+    END
+    POPUP "Face"
+    BEGIN
+        MENUITEM "Remove Coenciding Faces",     ID_FACE_REMOVECOENCIDINGFACES
+
+    END
+    POPUP "Polygon"
+    BEGIN
+        MENUITEM "Delete Polygon",              ID_DELETE_POLYGON, GRAYED
+        MENUITEM "Add Polygon",                 ID_ADD_POLYGON, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Load...",                     ID_LOAD_POLYGON, GRAYED
+        MENUITEM "Save...",                     ID_SAVE_POLYGON, GRAYED
+        MENUITEM "Save As...",                  ID_SAVE_AS, GRAYED
+    END
+    POPUP "Brush"
+    BEGIN
+        MENUITEM "Materialize",                 ID_BRUSH_MATERIALIZE
+        MENUITEM "Triangle",                    ID_BRUSH_TRIANGLE
+        MENUITEM "Cube",                        ID_BRUSH_CUBE
+        MENUITEM "Sheet",                       ID_BRUSH_SHEET
+        MENUITEM "Stairs",                      ID_BRUSH_STAIRS
+    END
+    POPUP "Camera"
+    BEGIN
+        MENUITEM "Reset Position",              ID_RESET_POSITION
+        MENUITEM "Camera Properties",           ID_CAMERA_PROPERTIES
+    END
+    POPUP "Options"
+    BEGIN
+        MENUITEM "Map Properties...",           ID_MAP_PROPERTIES
+        MENUITEM "Editor Properties...",        ID_EDITOR_PROPERTIES
+    END
+    POPUP "Window"
+    BEGIN
+        MENUITEM "Reset Views",                 ID_WINDOW_RESETVIEWS
+        POPUP "Toggle Active State"
+        BEGIN
+            MENUITEM "3D Window",                   ID_WINDOW_TOGGLEACTIVESTATE_3DWINDOW
+
+            MENUITEM "2D Left Window",              ID_WINDOW_TOGGLEACTIVESTATE_2DLEFTWINDOW
+
+            MENUITEM "2D Center Window",            ID_WINDOW_TOGGLEACTIVESTATE_2DCENTERWINDOW
+
+            MENUITEM "2D Right Window",             ID_WINDOW_TOGGLEACTIVESTATE_2DRIGHTWINDOW
+
+        END
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "About Model v1.0",            ID_ABOUT
+    END
+END
+
+IDR_3DMENU MENU 
+BEGIN
+    POPUP "View"
+    BEGIN
+        MENUITEM "Bahs",                        ID_VIEW_BAHS
+        MENUITEM "schwing",                     ID_VIEW_SCHWING
+    END
+END
+
+IDR_MENU_FACE MENU 
+BEGIN
+    POPUP "Face"
+    BEGIN
+        MENUITEM "Align Texture",               ID_FACE_ALIGNTEXTURE
+        MENUITEM "Delete",                      ID_FACE_DELETE
+        MENUITEM "Blah",                        ID_FACE_BLAH
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+SETTINGSDB DIALOG  0, 0, 342, 201
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Editor Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,290,185,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,235,185,50,14
+    GROUPBOX        "Grid",IDC_STATIC_GRID,5,5,150,95
+    GROUPBOX        "Mouse Sensativity",IDC_STATIC,5,100,150,95
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,10,125,140,15
+END
+
+CAMERADB DIALOG  0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Camera Properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+END
+
+MAPDB DIALOG  0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Map Properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+END
+
+ABOUTDB DIALOG  0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+END
+
+TEXTURESTABDB DIALOGEX 15, 3, 150, 301
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST_TEXTURENAMES,5,48,140,82,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "Load Set...",IDC_LOADTEXPACKAGE,5,135,140,15
+    PUSHBUTTON      "Apply Texture to Current",IDC_APPLYTOCURRENT,5,247,140,
+                    14
+    CONTROL         "",IDC_STATIC_TEXTUREPREVIEW,"Static",SS_BLACKFRAME | 
+                    SS_SUNKEN,10,162,88,81
+    PUSHBUTTON      "Edit...",IDC_BUTTON_EDITTEX,100,162,40,15,WS_DISABLED
+    PUSHBUTTON      "Save...",IDC_BUTTON_SAVE,100,182,40,15,WS_DISABLED
+    PUSHBUTTON      "Import...",IDC_BUTTON_IMPORTTEX,100,202,40,15,
+                    WS_DISABLED
+    PUSHBUTTON      "Export...",IDC_BUTTON_EXPORTTEX,100,222,40,15,
+                    WS_DISABLED
+    GROUPBOX        "Texture Preview",IDC_STATIC_PREVIEWTEX,5,151,140,95
+    LTEXT           "Texture Package",IDC_STATIC_TEXTUREPACKAGE,5,0,55,8
+    LISTBOX         IDC_LIST_PACKAGE,5,10,140,30,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP,
+                    WS_EX_DLGMODALFRAME
+    LTEXT           "Texture",IDC_STATIC_TEXTURE,5,40,25,8
+    GROUPBOX        "Apply Texture As:",IDC_STATIC_APPLY_TEXTURE_AS,5,265,
+                    138,35
+    CONTROL         "Texture 1",IDC_RADIO_TEXTURE1,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,10,275,40,20,
+                    WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    CONTROL         "Texture 2",IDC_RADIO_TEXTURE2,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,55,275,40,20,
+                    WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    CONTROL         "Lightmap",IDC_RADIO_LIGHTMAP,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,100,275,40,20,
+                    WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+END
+
+POLYGONTABDB DIALOG  15, 3, 150, 301
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tree1",IDC_TREE_POLYGONTREE,"SysTreeView32",
+                    TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | 
+                    TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,10,10,130,110
+    GROUPBOX        "Polygon Hierarchy",IDC_STATIC_POLYGONTREE,5,0,140,295
+    GROUPBOX        "Info",IDC_STATIC_BORDER,10,150,130,140,BS_CENTER
+    LTEXT           "Name:",IDC_STATIC_NAME,11,137,23,8
+    EDITTEXT        IDC_EDIT_NAME,35,135,75,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Apply",IDC_BUTTON_APPLYNAME,115,135,25,12
+    CONTROL         "Auto Update",IDC_CHECK_AUTOUPDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,45,122,55,10
+END
+
+LEVELTABDB DIALOG  15, 3, 150, 301
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Level Properties",IDC_STATIC_LEVELPROPERTIES,5,0,140,
+                    295
+    EDITTEXT        IDC_EDIT_LEVELNAME,55,15,85,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_AUTHORNAME,55,30,85,12,ES_AUTOHSCROLL
+    LTEXT           "Level Name:",IDC_STATIC_LEVELNAME,10,15,40,10
+    LTEXT           "Author Name:",IDC_STATIC_AUTHORNAME,10,30,45,8
+    CONTROL         "Single Player",IDC_RADIO_SINGLEPLAYER,"Button",
+                    BS_AUTORADIOBUTTON,15,90,55,8
+    CONTROL         "Death Match",IDC_RADIO_DEATHMATCH,"Button",
+                    BS_AUTORADIOBUTTON,15,115,55,8
+    CONTROL         "Capture the Flag",IDC_RADIO_CAPTURETHEFLAG,"Button",
+                    BS_AUTORADIOBUTTON,15,175,65,8
+    CONTROL         "Domination",IDC_RADIO_DOMINATION,"Button",
+                    BS_AUTORADIOBUTTON,15,145,50,8
+    GROUPBOX        "Map Information",IDC_STATIC_MAPINFO,10,80,130,155
+    CONTROL         "Cooperative",IDC_RADIO_COOPERATIVE,"Button",
+                    BS_AUTORADIOBUTTON,15,205,60,8
+    EDITTEXT        IDC_EDIT_URL,55,45,85,12,ES_AUTOHSCROLL
+    LTEXT           "URL:",IDC_STATIC_URL,10,45,20,10
+    EDITTEXT        IDC_EDIT2,55,60,85,12,ES_AUTOHSCROLL
+    LTEXT           "Entry Text:",IDC_STATIC_ENTRYTEXT,10,60,40,10
+    LTEXT           "A one player map only.",IDC_STATIC_SINGLEPLAYER,15,100,
+                    120,10
+    LTEXT           "A free for all map (no teams). Players respawn after death.",
+                    IDC_STATIC_DEATHMATCH,15,125,120,20
+    LTEXT           "Capture and defend waypoints to score points.",
+                    IDC_STATIC_DOMINATION,15,155,120,20
+    LTEXT           "Capture the enemie's flag and bring it to base to score points for your team.",
+                    IDC_STATIC_CAPTURETHEFLAG,15,185,120,20
+    LTEXT           "Work with other players to complete objectives.",
+                    IDC_STATIC_COOPERATIVE,15,215,120,17
+END
+
+FACEDB DIALOG  13, 160, 122, 131
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "U",IDC_BUTTON_PANUP,20,15,10,10
+    PUSHBUTTON      "D",IDC_BUTTON_PANDOWN,20,35,10,10
+    PUSHBUTTON      "L",IDC_BUTTON_PANLEFT,10,25,10,10
+    PUSHBUTTON      "R",IDC_BUTTON_PANRIGHT,30,25,10,10
+    GROUPBOX        "Pan",IDC_STATIC_PAN,5,5,40,60,BS_CENTER
+    PUSHBUTTON      "Flip U",IDC_BUTTON_FLIPU,50,20,30,10
+    PUSHBUTTON      "Flip V",IDC_BUTTON_FLIPV,85,20,30,10
+    EDITTEXT        IDC_EDIT_SCALE,75,5,40,12,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "Scale:",IDC_STATIC_SCALE,52,6,22,8
+    CONTROL         "U-Pan",IDC_CHECK_UPAN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,100,35,8
+    CONTROL         "V-Pan",IDC_CHECK_VPAN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,110,35,8
+    EDITTEXT        IDC_EDIT_PANAMOUNT,10,50,30,12,ES_AUTOHSCROLL
+    CONTROL         "Translucent",IDC_CHECK_TRANSLUCENT,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,5,120,53,8
+    PUSHBUTTON      "Align Texture",IDC_BUTTON_FACE_ALIGNTEXTURE,50,50,65,10
+    CONTROL         "Use Texture 1",IDC_CHECK_USE_TEXTURE1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,70,55,8
+    CONTROL         "Use Texture 2",IDC_CHECK_USE_TEXTURE2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,80,65,8
+    CONTROL         "Use Lightmap",IDC_CHECK_USE_LIGHTMAP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,90,65,8
+    PUSHBUTTON      "Rotate 90",IDC_BUTTON_ROTATE_90,50,30,65,10
+    PUSHBUTTON      "Rotate Lightmap 90",IDC_BUTTON_ROTATE_LIGHTMAP,50,40,65,
+                    10
+END
+
+POLYGONDB DIALOG  13, 160, 122, 71
+STYLE DS_SETFONT | WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "AutoAlign Textures",IDC_BUTTON_POLYGON_ALIGNTEXTURES,27,
+                    29,65,15
+END
+
+VERTEXDB DIALOG  13, 160, 126, 71
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_TEXTUREU,25,10,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_TEXTUREV,65,10,35,12,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Texture U:",IDC_STATIC_TEXTUREU,25,0,35,8
+    LTEXT           "Texture V:",IDC_STATIC_TEXTUREV,65,0,35,8
+    LTEXT           "Red:",IDC_STATIC_RED,14,46,20,10
+    LTEXT           "Green:",IDC_STATIC_GREEN,51,47,25,8
+    LTEXT           "Blue:",IDC_STATIC_BLUE,93,47,20,8
+    EDITTEXT        IDC_EDIT_RED,5,58,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_GREEN,45,58,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_BLUE,84,58,35,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_STATIC_COLORPREVIEW,"Static",SS_BLACKFRAME | 
+                    SS_SUNKEN,4,25,115,20
+END
+
+LIGHTTABDB DIALOGEX 15, 3, 150, 301
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Light Properties",IDC_STATIC_LIGHTPROPERTIES,5,0,140,
+                    295
+    PUSHBUTTON      "Calculate Lighting",IDC_BUTTON_CALCULATE_LIGHTMAPS,15,
+                    180,70,15
+    EDITTEXT        IDC_EDIT_TOTAL_BOUNCES,15,145,40,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "Reflects:",IDC_STATIC_LIGHTMAP_LOD,20,135,29,8
+    CONTROL         "Progress1",IDC_PROGRESS_LIGHTING,"msctls_progress32",
+                    WS_BORDER | 0x1,20,100,110,15,WS_EX_DLGMODALFRAME | 
+                    WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    LTEXT           "Total Lighting Progress:",IDC_STATIC_LIGHTINGPROGRESS,
+                    25,89,75,8
+    GROUPBOX        "Lighting Progress",IDC_STATIC_LIGHT_PROGRESS,15,20,120,
+                    114,BS_CENTER
+    LTEXT           "Polygon:",IDC_STATIC_LIGHT_CURRENT_POLYGON,20,30,30,8
+    LTEXT           "Face:",IDC_STATIC_LIGHT_CURRENT_FACE,24,45,20,8
+    LTEXT           "of",IDC_STATIC_OF,65,30,10,8
+    EDITTEXT        IDC_EDIT_CURRENT_POLYGON,50,30,15,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_CURRENT_FACE,50,45,15,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    LTEXT           "of",IDC_STATIC_OF2,65,45,10,8
+    EDITTEXT        IDC_EDIT_TOTAL_POLYGONS,75,30,15,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_TOTAL_FACES,75,45,15,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_CURRENT_U,50,60,15,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_CURRENT_V,75,60,15,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    LTEXT           "U:",IDC_STATIC_U,35,60,10,8
+    LTEXT           "V:",IDC_STATIC_V,65,60,11,8
+    LTEXT           "Res:",IDC_STATIC_LIGHTMAP_RES,30,75,15,8
+    EDITTEXT        IDC_EDIT_LIGHTMAP_RES,50,75,15,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    LTEXT           "Patch:",IDC_STATIC_PATCH,35,120,20,8
+    LTEXT           "of",IDC_STATIC_OF3,81,120,10,8
+    EDITTEXT        IDC_EDIT_CURRENT_PATCH,61,120,20,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_CURRENT_TOTAL_PATCHES,91,120,20,12,
+                    ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_LIGHT_PERCENT,101,88,15,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    LTEXT           "%",IDC_STATIC_PERCENT,116,89,9,8
+    LTEXT           "Bounce X",IDC_STATIC_REFLECTION_INTENSITY,100,135,35,8
+    LTEXT           "Light Factor:",IDC_STATIC_LIGHT_INTENSITY,55,135,40,8
+    EDITTEXT        IDC_EDIT_LIGHT_REFLECTION_INTENSITY,95,145,40,12,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_LIGHT_INTENSITY,55,145,40,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Show Hemicube",IDC_CHECK_SHOW_HEMICUBE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,70,160,65,8
+    LTEXT           "Color:",IDC_STATIC_COLOR,106,28,20,10
+    EDITTEXT        IDC_EDIT_LIGHTING_R,105,40,20,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_LIGHTING_G,105,55,20,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_LIGHTING_B,105,70,20,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+    LTEXT           "R:",IDC_STATIC_LIGHTING_R,95,40,10,10
+    LTEXT           "G:",IDC_STATIC_LIGHTING_G,95,55,10,10
+    LTEXT           "B:",IDC_STATIC_LIGHTING_B,95,70,10,10
+    PUSHBUTTON      "Remove",IDC_BUTTON_REMOVE_LIGHT,15,225,40,10
+    CONTROL         "Slider1",IDC_SLIDER_LIGHT_RED,"msctls_trackbar32",
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,25,240,110,10
+    CONTROL         "Slider1",IDC_SLIDER_LIGHT_GREEN,"msctls_trackbar32",
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,25,250,110,10
+    CONTROL         "Slider1",IDC_SLIDER_LIGHT_BLUE,"msctls_trackbar32",
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,25,260,110,10
+    LTEXT           "R:",IDC_STATIC_R,15,240,8,10
+    LTEXT           "G:",IDC_STATIC_G,15,250,8,10
+    LTEXT           "B:",IDC_STATIC_B,15,260,8,10
+    LTEXT           "Brightness:",IDC_STATIC_LIGHT_BRIGHTNESS,51,269,36,8
+    CONTROL         "Slider1",IDC_SLIDER_LIGHT_INTENSITY,"msctls_trackbar32",
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,16,276,120,10
+    PUSHBUTTON      "Create",IDC_BUTTON_ADD_LIGHT,55,225,40,10
+    GROUPBOX        "Radiosity:",IDC_STATIC_RADIOSITY,10,10,130,190,
+                    BS_CENTER
+    GROUPBOX        "Light Properties",IDC_STATIC_LIGHT_PROPERTIES,10,200,
+                    130,90
+    LTEXT           "Light Name:",IDC_STATIC_LIGHT_NAME,15,212,40,8
+    EDITTEXT        IDC_EDIT_LIGHT_NAME,55,210,35,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Apply",IDC_BUTTON_APPLY_LIGHT_NAME,94,211,35,10
+    PUSHBUTTON      "Effects",IDC_BUTTON_LIGHT_EFFECTS,95,225,40,10
+    CONTROL         "High Quality",IDC_RADIO_HIGH_QUALITY_LIGHTING,"Button",
+                    BS_AUTORADIOBUTTON,15,160,55,8
+    CONTROL         "Really Crappy",IDC_RADIO_NORMAL_QUALITY_LIGHTING,"Button",
+                    BS_AUTORADIOBUTTON,15,170,60,8
+    EDITTEXT        IDC_EDIT_LIGHTMAP_THRESHOLD,95,180,40,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER | WS_DISABLED
+    LTEXT           "Threshold:",IDC_STATIC_LIGHTMAP_THRESHOLD,95,170,35,8
+END
+
+BRUSHTABDB DIALOGEX 15, 3, 150, 301
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Brush Selection",IDC_STATIC_BRUSHS,5,0,140,295
+    GROUPBOX        "",IDC_STATIC_BRUSHPROPERTIES,10,135,130,100,BS_CENTER
+    CONTROL         "Sheet",IDC_RADIO_SHEET,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_TABSTOP,10,10,40,15,WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    CONTROL         "Cube",IDC_RADIO_CUBE,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_TABSTOP,55,10,40,15,WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    CONTROL         "Stairs",IDC_RADIO_STAIRS,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_TABSTOP,100,10,40,15,WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    CONTROL         "Spiral",IDC_RADIO_SPIRAL,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_TABSTOP,10,30,40,15,WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    CONTROL         "Cone",IDC_RADIO_CONE,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_DISABLED | WS_TABSTOP,55,30,40,15,
+                    WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    CONTROL         "Sphere",IDC_RADIO_SPHERE,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_DISABLED | WS_TABSTOP,100,30,40,15,
+                    WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    CONTROL         "Cylinder",IDC_RADIO_CYLINDER,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_TABSTOP,10,50,40,
+                    15,WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    CONTROL         "Circle",IDC_RADIO_CIRCLE,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_TABSTOP,55,50,40,15,WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    CONTROL         "n/a",IDC_RADIO10,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_DISABLED | WS_TABSTOP,100,50,40,15,
+                    WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    PUSHBUTTON      "Add",IDC_BUTTON_ADDBRUSHTOCUSTOM,15,75,40,15,
+                    WS_DISABLED
+    GROUPBOX        "Custom Brushs",IDC_STATIC_CUSTOMBRUSH,10,65,130,50
+    PUSHBUTTON      "Remove",IDC_BUTTON_REMOVEBRUSHFROMCUSTOM,15,95,40,15,
+                    WS_DISABLED
+    LISTBOX         IDC_LIST1,60,75,75,36,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Update Brush",IDC_BUTTON_UPDATEBRUSH,10,120,130,15
+END
+
+SHEETDB DIALOG  13, 144, 122, 88
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_USIZE,75,30,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_VSIZE,75,45,40,12,ES_AUTOHSCROLL
+    LTEXT           "U:",IDC_STATIC_SHEET_U,65,30,10,10
+    LTEXT           "V:",IDC_STATIC_SHEET_VSIZE,65,45,10,10
+    GROUPBOX        "Alignment",IDC_STATIC_SHEET_ALIGNEMNT,5,0,50,85
+    GROUPBOX        "Size",IDC_STATIC_SHEET_SIZE,60,0,60,85
+    CONTROL         "X - Axis",IDC_RADIO_SHEET_X_AXIS,"Button",
+                    BS_AUTORADIOBUTTON,10,25,40,8
+    CONTROL         "Y - Axis",IDC_RADIO_SHEET_Y_AXIS,"Button",
+                    BS_AUTORADIOBUTTON,10,35,39,10
+    CONTROL         "Z - Axis",IDC_RADIO_SHEET_Z_AXIS,"Button",
+                    BS_AUTORADIOBUTTON,10,45,40,10
+END
+
+CUBEDB DIALOG  13, 144, 122, 88
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_CUBE_DEPTH,55,25,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CUBE_WIDTH,55,40,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CUBE_HEIGHT,55,55,40,12,ES_AUTOHSCROLL
+    GROUPBOX        "Dimensions",IDC_STATIC_CUBE_DIMENSIONS,20,0,80,85
+    LTEXT           "Depth:",IDC_STATIC_CUBE_DEPTH,25,25,22,8
+    LTEXT           "Width:",IDC_STATIC_WIDTH,25,40,25,8
+    LTEXT           "Height:",IDC_STATIC_HEIGHT,25,55,25,8
+END
+
+STAIRSDB DIALOG  13, 144, 122, 88
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Step Depth:",IDC_STATIC_STEP_DEPTH,10,10,45,8
+    LTEXT           "Step Width:",IDC_STATIC_STEP_WIDTH,10,25,40,8
+    LTEXT           "Step Height:",IDC_STATIC_STEP_HEIGHT,10,40,40,8
+    EDITTEXT        IDC_EDIT_STEP_DEPTH,70,10,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_STEP_WIDTH,70,25,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_STEP_HEIGHT,70,40,45,12,ES_AUTOHSCROLL
+    LTEXT           "Number of Steps:",IDC_STATIC_STEP_STEPS,10,55,55,10
+    LTEXT           "Add to First Step:",IDC_STATIC_STEP_ADDTOFIRST,10,70,60,
+                    10
+    EDITTEXT        IDC_EDIT_STEP_NUMSTEPS,70,55,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_STEP_ADDTOFIRST,70,70,45,12,ES_AUTOHSCROLL
+END
+
+SPIRALDB DIALOGEX 13, 144, 122, 88
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Step Width:",IDC_STATIC_SPIRAL_WIDTH,10,0,40,8
+    LTEXT           "Step Height:",IDC_STATIC_SPIRAL_HEIGHT,10,15,40,8
+    EDITTEXT        IDC_EDIT_SPIRAL_WIDTH,70,0,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SPIRAL_HEIGHT,70,15,45,12,ES_AUTOHSCROLL
+    LTEXT           "Number of Steps:",IDC_STATIC_SPIRAL_STEPS,10,30,55,10
+    LTEXT           "Add to First Step:",IDC_STATIC_SPIRAL_ADDTOFIRST,10,45,
+                    60,10
+    EDITTEXT        IDC_EDIT_SPIRAL_NUMSTEPS,70,30,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SPIRAL_ADDTOFIRST,70,45,45,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "Degrees:",IDC_STATIC_SPIRAL_DEGREES,10,60,30,10
+    EDITTEXT        IDC_EDIT_SPIRAL_DEGREES,70,60,45,12,ES_AUTOHSCROLL
+    LTEXT           "Inner Radius:",IDC_STATIC_SPIRAL_INNERRADIUS,10,75,50,
+                    10
+    EDITTEXT        IDC_EDIT_SPIRAL_INNERRADIUS,70,75,45,12,ES_AUTOHSCROLL
+END
+
+OPTIONSTABDB DIALOG  15, 3, 150, 301
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Editor Options",IDC_STATIC_EDITOR_OPTIONS,5,0,140,295
+    CONTROL         "Polys",IDC_CHECK_UPDATE_POLYS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,20,33,10
+    CONTROL         "Faces",IDC_CHECK_UPDATE_FACES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,30,35,10
+    CONTROL         "Verts",IDC_CHECK_UPDATE_VERTS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,40,40,10
+    PUSHBUTTON      "Apply Settings",IDC_BUTTON_APPLYEDITOROPTIONS,10,215,
+                    130,20
+    GROUPBOX        "Update",IDC_STATIC_CALL_FRAMEMOVE,10,10,60,45
+    GROUPBOX        "Render",IDC_STATIC_RENDER_OPTIONS,10,55,60,65
+    CONTROL         "Normals",IDC_CHECK_RENDER_NORMALS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,65,40,8
+    CONTROL         "Brush",IDC_CHECK_RENDER_BRUSH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,75,35,8
+    CONTROL         "Texturing",IDC_CHECK_USE_TEXTURING,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,16,194,45,8
+    CONTROL         "Lighting",IDC_CHECK_USE_LIGHTING,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,16,204,40,8
+    CONTROL         "Selected",IDC_CHECK_RENDER_SELECTED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,85,45,8
+    CONTROL         "Polygons",IDC_CHECK_RENDER_POLYGONS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,95,45,8
+    GROUPBOX        "Active Views",IDC_STATIC_ACTIVE_WINDOWS,10,130,60,55
+    CONTROL         "XZ (Left)",IDC_CHECK_ACTIVE_XZ,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,150,40,8
+    CONTROL         "XY (Center)",IDC_CHECK_ACTIVE_XY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,160,50,8
+    CONTROL         "YZ (Right)",IDC_CHECK_ACTIVE_YZ,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,170,50,8
+    GROUPBOX        "Enable",IDC_STATIC_ENABLE,10,185,60,30
+    CONTROL         "3D (Top)",IDC_CHECK_ACTIVE_3D,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,140,50,10
+    CONTROL         "Lights",IDC_CHECK_RENDER_LIGHTS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,105,45,8
+END
+
+CYLINDERDB DIALOG  13, 144, 122, 88
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Height:",IDC_STATIC_CYLINDER_HEIGHT,20,20,25,8
+    LTEXT           "Radius:",IDC_STATIC_CYLINDER_RADIUS,20,36,25,8
+    LTEXT           "Sides:",IDC_STATIC_CYLINDER_SIDES,20,50,25,8
+    GROUPBOX        "Dimensions",IDC_STATIC_CYLINDER_DIMENSIONS,15,0,85,85
+    EDITTEXT        IDC_EDIT_CYLINDER_HEIGHT,55,20,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CYLINDER_RADIUS,55,35,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CYLINDER_SIDES,55,50,40,12,ES_AUTOHSCROLL
+END
+
+CIRCLEDB DIALOG  13, 144, 122, 90
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Dimensions",IDC_STATIC_DIMENSIONS,20,0,80,85
+    LTEXT           "Sides:",IDC_STATIC_SIDES,25,25,20,8
+    LTEXT           "Radius:",IDC_STATIC_RADIUS,25,40,25,8
+    EDITTEXT        IDC_EDIT_CIRCLE_SIDES,55,25,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CIRCLE_RADIUS,55,40,40,12,ES_AUTOHSCROLL
+    LTEXT           "Degrees:",IDC_STATIC_CIRCLE_DEGREES,25,55,30,10
+    EDITTEXT        IDC_EDIT_CIRCLE_DEGREES,55,55,40,12,ES_AUTOHSCROLL
+END
+
+GEOMETRYTABDB DIALOGEX 15, 3, 150, 301
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Geometry Manipulation",IDC_STATIC_GEOMETRY,5,0,140,295
+    PUSHBUTTON      "Forward",IDC_BUTTON_GEOMETRY_SLIDE_FORWARD,35,105,40,20,
+                    0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Up",IDC_BUTTON_GEOMETRY_SLIDE_UP,60,20,30,20,
+                    WS_DISABLED,WS_EX_STATICEDGE
+    PUSHBUTTON      "Backward",IDC_BUTTON_GEOMETRY_SLIDE_BACKWARD,75,105,40,
+                    20,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Left",IDC_BUTTON_GEOMETRY_SLIDE_LEFT,15,40,45,20,
+                    WS_DISABLED,WS_EX_STATICEDGE
+    PUSHBUTTON      "Inflate",IDC_BUTTON_GEOMETRY_SLIDE_INFLATE,35,85,40,20,
+                    0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Right",IDC_BUTTON_GEOMETRY_SLIDE_RIGHT,90,40,45,20,
+                    WS_DISABLED,WS_EX_STATICEDGE
+    PUSHBUTTON      "Rot. Left",IDC_BUTTON_GEOMETRY_ROTATE_LEFT,35,65,40,20,
+                    0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Down",IDC_BUTTON_GEOMETRY_SLIDE_DOWN,60,40,30,20,
+                    WS_DISABLED,WS_EX_STATICEDGE
+    PUSHBUTTON      "Rot. Right",IDC_BUTTON_GEOMETRY_ROTATE_RIGHT,75,65,40,
+                    20,0,WS_EX_STATICEDGE
+    GROUPBOX        "Move",IDC_STATIC_MOVE_GEOMETRY,10,10,130,180,BS_CENTER
+    PUSHBUTTON      "Expand Face",IDC_BUTTON_EXPAND_FACE,10,195,130,15
+    EDITTEXT        IDC_EDIT_GEOMETRY_MOVE_SCALE,60,170,75,12,ES_AUTOHSCROLL
+    LTEXT           "Move Factor",IDC_STATIC_GEOMETRY_MOVE_AMOUNT,15,170,40,
+                    8
+    CONTROL         "Polygon",IDC_RADIO_GEOMETRY_POLYGON,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_DISABLED,20,140,40,
+                    20,WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    CONTROL         "Face",IDC_RADIO_GEOMETRY_FACE,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_DISABLED,60,140,30,
+                    20,WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    CONTROL         "Vertex",IDC_RADIO_GEOMETRY_VERTEX,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_DISABLED,90,140,40,
+                    20,WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    GROUPBOX        "Apply Movement to:",IDC_STATIC_GEOMETRY_APPLY_TO,15,130,
+                    120,35,BS_CENTER
+    EDITTEXT        IDC_EDIT_GEOMETRY_EXPAND_AMOUNT,65,215,75,12,
+                    ES_AUTOHSCROLL
+    LTEXT           "Expand Amount",IDC_STATIC_GEOMETRY_EXPAND_AMOUNT,10,215,
+                    50,8
+    PUSHBUTTON      "Deflate",IDC_BUTTON_GEOMETRY_SLIDE_DEFLATE,75,85,40,20,
+                    0,WS_EX_STATICEDGE
+END
+
+BUTTONSDB DIALOGEX 17, 307, 142, 107
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Next Triangle",IDC_BUTTONSDB_NEXTTRIANGLE,75,70,60,15,0,
+                    WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Next Vertex",IDC_BUTTONSDB_NEXTVERTEX,10,25,50,14,0,
+                    WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Next Face",IDC_BUTTONSDB_NEXTFACE,10,10,50,14,0,
+                    WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Expand Face",IDC_BUTTONSDB_EXPANDFACE,75,55,60,14,0,
+                    WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Next Segment",IDC_BUTTONSDB_NEXTSEGMENT,10,40,50,15,0,
+                    WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Subtract Brush",IDC_BUTTONSDB_SUBTRACTBRUSH,75,10,60,15,
+                    0,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Add Brush",IDC_BUTTONSDB_ADDBRUSH,75,25,60,15,0,
+                    WS_EX_CLIENTEDGE
+    GROUPBOX        "Selection",IDC_BUTTONSDB_SELECTION,5,0,60,60
+    GROUPBOX        "Brush",IDC_STATIC_BRUSH,70,0,70,45
+    GROUPBOX        "Geometry",IDC_STATIC_GEOMETRY,70,45,70,60
+    PUSHBUTTON      "Rebuild Geometry",IDC_BUTTONSDB_REBUILD_GEOMETRY,5,65,
+                    60,40,BS_MULTILINE,WS_EX_CLIENTEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    "SETTINGSDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 335
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+
+    "CAMERADB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    "MAPDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    "ABOUTDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    "TEXTURESTABDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 143
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 294
+    END
+
+    "POLYGONTABDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 143
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 294
+    END
+
+    "LEVELTABDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 143
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 294
+    END
+
+    "FACEDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 115
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+
+    "POLYGONDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 115
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    "VERTEXDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 119
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    "LIGHTTABDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 143
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 294
+    END
+
+    "BRUSHTABDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 143
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 294
+    END
+
+    "SHEETDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    "CUBEDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    "STAIRSDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    "SPIRALDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    "OPTIONSTABDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 143
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 294
+    END
+
+    "CYLINDERDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    "CIRCLEDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    "GEOMETRYTABDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 143
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 294
+    END
+
+    "BUTTONSDB", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 100
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CUBE                BITMAP                  "cube.bmp"
+IDB_SHEET               BITMAP                  "sheet.bmp"
+IDB_TRIANGLE            BITMAP                  "triangle.bmp"
+IDB_ADDBRUSH            BITMAP                  "addbrush.bmp"
+IDB_NEXTVERTEX          BITMAP                  "nextvert.bmp"
+IDB_GRAY                BITMAP                  "gray.bmp"
+IDB_SPLASH              BITMAP                  "logo.bmp"
+IDB_STAIRBRUSH          BITMAP                  "stairbrush.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AVI
+//
+
+IDR_AVI1                AVI                     "dillo.avi"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON                ICON                    "logo.ico"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
